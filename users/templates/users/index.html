@@ -1,0 +1,105 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <center>
+        <h3>Add new member</h3>
+        <hr/>
+        <form method="POST">
+            {% csrf_token %}
+        <table border="1" class="table table-bordered">
+            <tr>
+                <td>Member Name</td>
+                <td><input type="text" placeholder="Member Name.." name="stname"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" placeholder="Email.." name="stemail"></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><input type="text" placeholder="Address.." name="staddress"></td>
+            </tr>
+            <tr>
+                <td>Mobile</td>
+                <td><input type="text" placeholder="Mobile No." name="stmobile"></td>
+            </tr>
+            <tr>
+                <td>Animal Type</td>
+                <td>
+                <input type="radio" value="B" name="stgender" group="stgender">|Buffalo
+                <input type="radio" value="C" name="stgender" group="stgender">Cow
+            </td>
+            </tr>
+        </table>
+        <input type="submit" class="btn btn-info" value="Insert Record"/>
+    
+        <a class="btn btn-dark" href="{% url 'fun'%}">Home page</a>   
+        <!-- stdisplay is replaced with fun -->
+        <hr/>
+        {% if messages %}
+        {% for result in messages %}
+        <b>{{result}}</b>
+        {% endfor %}
+        {% endif %}
+    </form>
+    </center>
+    {% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   

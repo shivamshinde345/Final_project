@@ -1,0 +1,59 @@
+{% extends 'blog/base1.html' %}
+{% block body %}
+    <center>
+       <h1>Milk content</h1>
+       <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
+
+       <h2>Pearl Dairy</h2>
+       <hr/>
+       <!-- <a href="{% url 'stinsert'%}">Add Member Record</a> -->
+       <div class="container">
+       <div class="row">
+       <div class="col-xs-6">
+       <table border="2" class="table table-bordered" >
+           <thead class="table-dark">
+          <tr>
+              <th>Member Id</th>
+              <th>Milk Type</th>
+              <!-- <th>Member Name</th> -->
+              <th>Fat</th>
+              <th>SNF</th>
+              <th>CLR</th>
+              <th>Water</th>
+              <th>Temperature</th>
+              <th>Weight</th>
+              <th>Price</th>
+              <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for displayst in Data%}
+          <tr>
+              <td>{{displayst.id}}</td>
+              <td>{{displayst.fat}}</td>
+              <td>{{displayst.snf}}</td>
+              <td>{{displayst.clr}}</td>
+              <td>{{displayst.water}}</td>
+              <td>{{displayst.temp}}</td>
+              <td>{{displayst.weight}}</td>
+              
+          </tr>
+
+
+          {% endfor %}
+        </tbody>
+
+       </table>
+       {% if messages %}
+        {% for result in messages %}
+        <b>{{result}}</b>
+        {% endfor %}
+        {% endif %}
+
+       
+    </div>
+</div>
+</div>
+    </center>
+    
+{% endblock body %}

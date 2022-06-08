@@ -1,0 +1,43 @@
+{% extends "blog/base1.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+   <!-- <h1>{{ user.username }}</h1> -->
+   
+   
+   <div class="table-responsive">
+      <table border="2" class="table table-bordered" id="table" >
+          <thead class="table-dark">
+         <tr>
+             
+             <th data-type="number" scope="col">Member Id</th>
+             <th scope="col">Member Name</th>
+             <th scope="col">Email</th>
+             <th scope="col">Address</th>
+             <th scope="col">Mobile</th>
+             <th scope="col">Animal Type</th>
+             <th scope="col">Edit</th>
+             <th scope="col">Delete</th>
+         </tr>
+         
+       </thead>
+       
+       <tbody>
+          
+         {% for displayst in crudst%}
+         <tr>
+             <td scope="row">{{displayst.id}}</td>
+             <td scope="row">{{displayst.stname}}</td>
+             <td scope="row">{{displayst.stemail}}</td>
+             <td scope="row">{{displayst.staddress}}</td>
+             <td scope="row">{{displayst.stmobile}}</td>
+             <td scope="row">{{displayst.stgender}}</td>
+             <td scope="row"><a href="/edit/{{displayst.id}}">edit</a></td>
+             <td scope="row"><a href="/delete/{{displayst.id}}" onclick="return confirm('Are you surely want to delete?')">delete</a></td>
+         </tr>
+      
+
+         {% endfor %}
+       </tbod>
+
+  
+{% endblock content %}
