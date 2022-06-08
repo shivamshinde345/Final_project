@@ -4,8 +4,8 @@ from . forms import stform,stform1
 from django.contrib import messages
 from django.http import JsonResponse
 
+# import request
 
-import requests
 from django.views.decorators.csrf import csrf_exempt
 from django.http import StreamingHttpResponse
 
